@@ -16,7 +16,8 @@ echo ""
 # CONFIGURATION
 # =============================================================================
 
-DRUSH="docker compose exec -u www-data -T www /opt/drupal/vendor/bin/drush"
+FARMOS_SERVICE="${FARMOS_SERVICE_NAME:-www}"
+DRUSH="docker compose exec -u www-data -T $FARMOS_SERVICE /opt/drupal/vendor/bin/drush"
 MAX_WAIT_TIME=300  # Maximum wait time in seconds (5 minutes)
 POLL_INTERVAL=2    # Check every 2 seconds
 
